@@ -37,7 +37,14 @@ function getTravelGems() {
       document.querySelector('#travelgem-container').innerHTML += travelgemMarkup
     }
           
-          
+   function createFormHandler(e) {
+     e.preventDefault()
+      const titleInput = document.querySelector('#input-title').value
+      const descriptionInput = document.querySelector('#input-description').value
+      const imageInput = document.querySelector('#input-url').value
+      const destinationId = parseInt(document.querySelector('#categories').value)
+      postFetch(titleInput, descriptionInput, imageInput, destinationId)
+   }       
           
           
      
