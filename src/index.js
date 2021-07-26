@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getTravelGems()
 
     const createTravelgemForm = document.querySelector("#create-travelgem-form")
-
-    createTravelgemForm.addEventListener('submit', (e) =>
-    createFormHandler(e))
+    createTravelgemForm.addEventListener("submit", (e) => createFormHandler(e))
 })
 
 
@@ -17,7 +15,10 @@ function getTravelGems() {
       .then(travelgems => {
         // remember our JSON data is a bit nested due to our serializer
         travelgems.data.forEach(travelgem => {
-          // double check how your data is nested in the console so you can successfully access the attributes of each individual object
+          //debugger
+          //this is how i create a new instance of my travelgem class (backend)
+          let newTravelgem = new Travelgem(travelgem, travelgem.attributes)
+          
           render(travelgem)
         })
       })
@@ -25,6 +26,7 @@ function getTravelGems() {
 
 
     function render(travelgem) {
+      //check how it is nested in the browser 
       const travelgemMarkup = 
       `<div data-id=${travelgem.id}>
         <img src=${travelgem.attributes.image_url} height="200" width="250">
@@ -42,7 +44,7 @@ function getTravelGems() {
       const titleInput = document.querySelector('#input-title').value
       const descriptionInput = document.querySelector('#input-description').value
       const imageInput = document.querySelector('#input-url').value
-      const destinationId = parseInt(document.querySelector('#categories').value)
+      const destinationId = parseInt(document.querySelector('#travelgems').value)
       postFetch(titleInput, descriptionInput, imageInput, destinationId)
    }       
           
