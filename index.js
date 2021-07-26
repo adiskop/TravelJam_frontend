@@ -47,4 +47,22 @@ function getTravelGems() {
    }       
           
           
-     
+   function postFetch(title, description, image_url, destination_id) {
+    // build my body object outside of my fetch
+    const bodyData = {title, description, image_url, destination_id}
+  
+    fetch(endPoint, {
+      // POST request
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(bodyData)
+    })
+    .then(response => response.json())
+    .then(travelgem => {
+      console.log(travelgem);
+      const travelgemData = travelgem.data
+      // render JSON response
+      render(travelgemData)
+    })
+  }
+  
