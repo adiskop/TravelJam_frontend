@@ -19,32 +19,22 @@ function getTravelGems() {
           //this is how i create a new instance of my travelgem class (backend)
           let newTravelgem = new Travelgem(travelgem, travelgem.attributes)
           
-          render(travelgem)
+          document.querySelector('#travelgem-container').innerHTML += 
+          newTravelgem.renderTravelgemCard()
+         // render(travelgem)
         })
       })
     }
 
 
-    function render(travelgem) {
-      //check how it is nested in the browser 
-      const travelgemMarkup = 
-      `<div data-id=${travelgem.id}>
-        <img src=${travelgem.attributes.image_url} height="200" width="250">
-        <h3>${travelgem.attributes.title}</h3>
-        <p>${travelgem.attributes.destination.name}</p>
-        <button data-id=${travelgem.id}>edit</button>
-      </div>
-      <br><br>`;
-
-      document.querySelector('#travelgem-container').innerHTML += travelgemMarkup
-    }
+    
           
    function createFormHandler(e) {
      e.preventDefault()
       const titleInput = document.querySelector('#input-title').value
       const descriptionInput = document.querySelector('#input-description').value
       const imageInput = document.querySelector('#input-url').value
-      const destinationId = parseInt(document.querySelector('#travelgems').value)
+      const destinationId = parseInt(document.querySelector('#destinations').value)
       postFetch(titleInput, descriptionInput, imageInput, destinationId)
    }       
           
@@ -64,7 +54,10 @@ function getTravelGems() {
       console.log(travelgem);
       const travelgemData = travelgem.data
       // render JSON response
-      render(travelgemData)
+      let newTravelgem = new Travelgem(travelgemData, travelgemData.attributes)
+          
+          document.querySelector('#travelgem-container').innerHTML += 
+          newTravelgem.renderTravelgemCard()
     })
   }
   
