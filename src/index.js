@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //fetch and load travel gems
     getTravelGems()
 
-    const createTravelgemsForm = document.querySelector("#create-travelgem-form")
+    const createTravelgemForm = document.querySelector("#create-travelgem-form")
 
     createTravelgemForm.addEventListener('submit', (e) =>
     createFormHandler(e))
