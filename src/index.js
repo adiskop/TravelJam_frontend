@@ -1,6 +1,7 @@
 const endPoint = "http://localhost:3000/api/v1/travelgems";
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOM is loaded")
   //fetch and load travel gems
     getTravelGems()
 
