@@ -18,7 +18,7 @@ function getTravelGems() {
         travelgems.data.forEach(travelgem => {
           //debugger
           //this is how i create a new instance of my travelgem class (backend)
-          let newTravelgem = new Travelgem(travelgem, travelgem.attributes)
+          const newTravelgem = new Travelgem(travelgem, travelgem.attributes)
           
           document.querySelector('#travelgem-container').innerHTML += 
           newTravelgem.renderTravelgemCard()
