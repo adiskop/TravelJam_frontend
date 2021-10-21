@@ -1,4 +1,5 @@
 const endPoint = "http://localhost:3000/api/v1/travelgems";
+//this is a string representing our data source 
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM is loaded")
@@ -7,19 +8,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createTravelgemForm = document.querySelector("#create-travelgem-form")
     createTravelgemForm.addEventListener("submit", (e) => createFormHandler(e))
-})
+
+
+
+// LIVE CODE - WITH TAO - PART - 
+    document.querySelector("#user-comments")
+    const createCommentForm = document.querySelector("#user-comments-form")
+    
+    
+      
+    createCommentForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      let comment = e.target.comments.value;
+      document.querySelector("#user-comments").innerHTML += comment;
+    })
+
+
+
+//ENDS HERE 
+
+
+  })   
+     
+    
+
+
+     
+     
+  
+
+
+
+
+
 
 
 function getTravelGems() {
     fetch(endPoint)
       .then(res => res.json())
+      // Use this data inside of `json` to do DOM manipulation -name this whatever
       .then(travelgems => {
-        // remember our JSON data is a bit nested due to our serializer
+        // remember our JSON data is a bit nested due to our serializer- 
+        // our data is in an Array - inside there's a 'data' key
         travelgems.data.forEach(travelgem => {
           //debugger
           //this is how i create a new instance of my travelgem class (backend)
           const newTravelgem = new Travelgem(travelgem, travelgem.attributes)
           
+          
+
+
           document.querySelector('#travelgem-container').innerHTML += 
           newTravelgem.renderTravelgemCard()
          // render(travelgem)
