@@ -9,40 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const createTravelgemForm = document.querySelector("#create-travelgem-form")
     createTravelgemForm.addEventListener("submit", (e) => createFormHandler(e))
 
-
-
-// LIVE CODE - WITH TAO - PART - 
-    document.querySelector("#user-comments")
-    const createCommentForm = document.querySelector("#user-comments-form")
-    
-    
-      
-    createCommentForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-      let comment = e.target.comments.value;
-      document.querySelector("#user-comments").innerHTML += comment;
-    })
-
-
-
-//ENDS HERE 
-
-
   })   
-     
-    
-
-
-     
-     
   
 
-
-
-
-
-
-
+  
 function getTravelGems() {
     fetch(endPoint)
       .then(res => res.json())
