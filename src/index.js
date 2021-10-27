@@ -1,4 +1,4 @@
-const endPoint = "http://localhost:3000/api/v1/travelgems";
+const endPoint = "https://localhost:3000/api/v1/travelgems";
 //this is a string representing our data source 
 
 document.addEventListener('DOMContentLoaded', () => {
