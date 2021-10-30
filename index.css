@@ -8,7 +8,11 @@
     padding-bottom: 3rem;
     margin-bottom: 0;
      /* background-color: #fff; */
+<<<<<<< HEAD
      background-image: url("traveljam_background_picture.jpg");
+=======
+     background-image: url('https://images.unsplash.com/photo-1614357932292-a38393b966a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
+>>>>>>> 05df99513aeb8c9140a3d9689828acf10595c7f9
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
